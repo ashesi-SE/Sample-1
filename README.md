@@ -1,4 +1,13 @@
-# angular-seed — the seed for AngularJS apps
+# currency-app - a simple currency converaion applicatin in angular
+
+## Overview
+This project provides a simple currency coverter, initially focused on Cedi's to $.  Please see the wiking for more information
+
+## Basis
+
+The project is based on angularjs   angular-seed from github.  What is below is the angular seed readme info
+
+# angular seed readme info follows:
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
