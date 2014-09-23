@@ -7,6 +7,9 @@ This project provides a simple currency coverter, initially focused on Cedi's to
 
 The project is based on angularjs   angular-seed from github.  What is below is the angular seed readme info
 
+## Stable Tree
+this is the readme for the stable tree
+
 # angular seed readme info follows:
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
