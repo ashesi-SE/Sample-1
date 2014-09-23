@@ -11,8 +11,8 @@ angular.module('myApp.mainview', ['ngRoute'])
 
 .controller('MainViewCtrl', function($scope) {
 	$scope.cedidollarrate=3.25;
-	$scope.cedidollar=f() { return cedidollarrate; };
-	$scope.dollarcedi=f() { return (1/cedidollarrate); };
+	$scope.cedidollar=function() { return $scope.cedidollarrate; };
+	$scope.dollarcedi=function() { return (1/$scope.cedidollarrate); };
 
 
 });
