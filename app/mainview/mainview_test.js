@@ -6,11 +6,25 @@ describe('myApp.mainview module', function() {
 
   describe('mainview controller', function(){
 
-    it('should ....', inject(function($controller) {
+    it('should define a mainviewctrl model', inject(function($controller,$rootScope) {
       //spec body
-      var mainviewCtrl = $controller('MainViewCtrl');
+      var myScope= $rootScope.$new(),
+      	mainviewCtrl = $controller('MainViewCtrl',{'$scope':myScope});
       expect(mainviewCtrl).toBeDefined();
     }));
+
+
+    it("should have a cedidollar functon",inject(function($controller,$rootScope){
+      var myScope= $rootScope.$new(),
+      	  mainviewCtrl = $controller('MainViewCtrl',{'$scope':myScope});
+          expect(myScope.cedidollar).toBeDefined();
+    }));
+     it("should have a cedidollarrate",inject(function($controller,$rootScope){
+      var myScope= $rootScope.$new(),
+      	  mainviewCtrl = $controller('MainViewCtrl',{'$scope':myScope});
+          expect(myScope.cedidollarrate).toBeDefined();
+    }));
+
 
   });
 });
