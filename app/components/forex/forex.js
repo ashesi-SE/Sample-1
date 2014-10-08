@@ -4,7 +4,7 @@ angular.module('myApp.forex',[])
 
 .factory('ForEx',function ($http) {
 	var CURRENCYAPI='http://openexchangerates.org/api/latest.json?app_id=887afbe0845f4b388a2b1066bb125bd5',
-		CURRENCYNAMES='http://openexchangerates.org/api/currencies.json'
+		CURRENCYNAMES='http://openexchangerates.org/api/currencies.json',
 	    calledapi=false,
 	    currencystatus="api has not been called",
 	    allrates=null;
@@ -24,21 +24,21 @@ angular.module('myApp.forex',[])
 						    currencystatus="call failed with an error: "+status.toString();
 						  });
 						},
-		getallrates :function(){
+		getallrates : function(){
 			if(calledapi&&(allrates!=null)) {
 				return(allrates);
 			} else {
 				return(currencystatus);
-			}
+			};
+        },
 		getdollartocedi : function(){
 				if(calledapi&&(allrates!=null)) {
 					var dtoc=allrates.rates['GHS'];
 					if(dtoc!=null) {
-						return({ rate: dtoc, asof : allrates);
-					} else {return("CEDI exchange rate not available")} 
+						return({ rate: dtoc, asof : allrates.timestamp});
+					} else {return("CEDI exchange rate not available");} 
 
 				}
 			}
 		 }
-		}
 });
