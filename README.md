@@ -10,6 +10,9 @@ The project is based on angularjs   angular-seed from github.  What is below is 
 ## Stable Tree
 this is the readme for the stable tree
 
+## Week 3
+This is the week 3 readme
+
 # angular seed readme info follows:
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
