@@ -11,7 +11,7 @@ module.exports = function(config){
       'app/mainview*/**/*.js',
       'app/view*/**/*.js',
       // json fixtures
-      'spec/javascripts/fixtures/json/*.json'
+      // this doesn work:  'spec/javascripts/fixtures/json/*.json'
     ],
 
     autoWatch : true,

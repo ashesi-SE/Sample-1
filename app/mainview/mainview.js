@@ -15,6 +15,7 @@ angular.module('myApp.mainview', ['ngRoute','myApp.ForEx'])
         $scope.updaterate= function(){
                   ForEx.getlatest(function(data){
                        $scope.forexdata=data;
+                       $scope.oldrate=$scope.cedidollarrate;
                        $scope.cedidollarrate=data.rates['GHS'];
                 });
                 }

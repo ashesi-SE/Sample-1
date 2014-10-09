@@ -3,7 +3,7 @@
 describe('myApp.forex module', function() {
   beforeEach(function(){
           //var CURRENCYAPI;
-          module('myApp.forex');
+          module('myApp.ForEx');
         });
 
       describe('ForEx service basics', function() {
@@ -30,10 +30,10 @@ describe('myApp.forex module', function() {
       beforeEach(inject(function($injector,$rootScope,$controller){
           var CURRENCYAPIURL = 'http://openexchangerates.org/api/latest.json?app_id=887afbe0845f4b388a2b1066bb125bd5';
           $httpBackend=$injector.get('$httpBackend');
+          // bug bug can't seem to get getJSONFixtues to work
           //jasmine.getJSONFixtures().fixturesPath="base/app/components/forex/sample_json";
 
-          $httpBackend.whenGET(CURRENCYAPIURL).respond(getJSONFixture('latest.json'));
-/*
+          //$httpBackend.whenGET(CURRENCYAPIURL).respond(getJSONFixture('latest.json'));
 
           $httpBackend.whenGET(CURRENCYAPIURL).respond({
               "disclaimer": "Exchange rates are provided for informational purposes only, and do not constitute financial advice of any kind. Although every attempt is made to ensure quality, NO guarantees are given whatsoever of accuracy, validity, availability, or fitness for any purpose - please use at your own risk. All usage is subject to your acceptance of the Terms and Conditions of Service, available at: https://openexchangerates.org/terms/",
@@ -211,17 +211,18 @@ describe('myApp.forex module', function() {
                   "ZWL": 322.355006
               }
           });
-*/
 
       }));
 
       it('should getlatest and set results', inject(function(ForEx,$http) {
           // todo--change to mock the results and insert them...
-          ForEx.getlatest();
+          var getl;
+          ForEx.getlatest(function(data){getl=data;});
           $httpBackend.flush();
           var latest=ForEx.getallrates( );
 
           expect(latest.timestamp).toBeDefined;
+          expect(getl.timestamp).toBeDefined;
       }));
   });
 });
