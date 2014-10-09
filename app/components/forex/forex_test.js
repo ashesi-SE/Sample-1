@@ -30,7 +30,7 @@ describe('myApp.forex module', function() {
       beforeEach(inject(function($injector,$rootScope,$controller){
           var CURRENCYAPIURL = 'http://openexchangerates.org/api/latest.json?app_id=887afbe0845f4b388a2b1066bb125bd5';
           $httpBackend=$injector.get('$httpBackend');
-          jasmine.getJSONFixtures().fixturesPath="base/app/components/forex/sample_json";
+          //jasmine.getJSONFixtures().fixturesPath="base/app/components/forex/sample_json";
 
           $httpBackend.whenGET(CURRENCYAPIURL).respond(getJSONFixture('latest.json'));
 /*
