@@ -1,6 +1,23 @@
+<div class="panel panel-primary">
 <span>Main View: Cedi to Dollar</span>
-
-<p>{{cedidollar() | number : 2}} Ghana Cedi's to the US dollar</p>
-<p>{{dollarcedi() | currency }} US dollars to the Ghana Cedi</p>
+<div class="row">
+  <div class="col-xs-4 col-md-2">
+  	<p>{{cedidollar() | number : 2}} </p>
+  </div>
+  <div class="col-xs-8 col-md-10">
+  	<p>Ghana Cedi's to the US dollar</p>
+  </div>
+ </div>
+ <div class="row">
+  <div class="col-xs-4 col-md-2">
+  	<p>{{dollarcedi() | currency }} </p>
+  </div>
+  <div class="col-xs-8 col-md-10">
+	<p>US dollars to the Ghana Cedi</p>
+  </div>
+</div>
+<button type="btn btn-primary btn-lg" ng-click="updaterate()">Update Rate</button>
+</div> 
+<div class="panel panel-info">
 <p>Old Rate Was: {{oldrate }}</p>
-<button ng-click="updaterate()">Update Rate</button>
+</div>
