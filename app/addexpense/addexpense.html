@@ -1,3 +1,42 @@
+<legend>Track Item Price</legend>
+<div class="form-group">
+	<label class="control-label" for="idescription">Description</label>
+	<input class="form-control" id="idescription" type="text" ng-model="idescription" placeholder="Item Description" autofocus>{{idescription}}</input>
+	<label class="control-label" for="icedi">Price</label>
+	<div class="input-group">
+		<span class="input-group-addon">GH₵</span>
+		<input type="text" ng-model="icedi" name="icedi" placeholder="Price" smart-float>{{icedi}}</input>
+	</div>
+	<label class="control-label" for="idollars">Price</label>
+	<div class="input-group">
+		<span class="input-group-addon">US$</span>
+		<input type="text" ng-model="idollars" name="idollars" placeholder="Price" smart-float>{{idollars}}</input>
+	</div>
+	<button class="btn btn-lrge" ng-click="additem()">Add</button>
+</div>
+<div class="col-xs-12 col-md-12"> 
+  <div ng-show="idollars||icedi" class="panel panel-info">
+    <div class="panel panel-heading">
+      <h3 class="panel-title">{{idescription}}</h3>
+    </div>
+    <div class="panel panel-body">
+    	<div class="col-xs-3 col-md-3">
+    		<p>GH₵</p>
+    	</div>
+    	<div class="col-xs-3 col-md-3">
+    		<p>{{icedi}}</p>
+    	</div>
+    	<div class="col-xs-3 col-md-3">
+    		<p>GH₵</p>
+    	</div>
+    	<div class="col-xs-3 col-md-3">
+    		<p>{{idollar}</p>
+    	</div>
+        <p>Entered On: {{updatetime}}</p>
+    </div>
+  </div>
+ </div>
+
 <p>This is the partial for Add Expense</p>
 <p>
   Showing of 'interpolate' filter:
