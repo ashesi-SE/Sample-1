@@ -223,6 +223,8 @@ describe('myApp.forex module', function() {
 
           expect(latest.timestamp).toBeDefined;
           expect(getl.timestamp).toBeDefined;
+          expect(ForEx.hasbeencalled()).toBeTruthy;
+          expect(ForEx.iscurrent()).toBeTruthy;
       }));
   });
 });

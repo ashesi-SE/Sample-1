@@ -1,20 +1,22 @@
 <legend>Track Item Price</legend>
+<div class="container col-xs-12 col-md-10 col-lg-6">
 <div class="form-group">
 	<label class="control-label" for="idescription">Description</label>
-	<input class="form-control" id="idescription" type="text" ng-model="idescription" placeholder="Item Description" autofocus>{{idescription}}</input>
+	<input class="form-control" id="idescription" type="text" ng-model="idescription" placeholder="Item Description" autofocus></input>
 	<label class="control-label" for="icedi">Price</label>
 	<div class="input-group">
 		<span class="input-group-addon">GH₵</span>
-		<input type="text" ng-model="icedi" name="icedi" placeholder="Price" smart-float>{{icedi}}</input>
+		<input type="text" ng-model="icedi" name="icedi" placeholder="Price" smart-float></input>
 	</div>
 	<label class="control-label" for="idollars">Price</label>
 	<div class="input-group">
 		<span class="input-group-addon">US$</span>
-		<input type="text" ng-model="idollars" name="idollars" placeholder="Price" smart-float>{{idollars}}</input>
+		<input type="text" ng-model="idollars" name="idollars" placeholder="Price" smart-float></input>
 	</div>
 	<button class="btn btn-lrge" ng-click="additem()">Add</button>
 </div>
-<div class="col-xs-12 col-md-12"> 
+</div>
+<div class="container-fluid col-xs-12 col-md-10 col-lg-6"> 
   <div ng-show="idollars||icedi" class="panel panel-info">
     <div class="panel panel-heading">
       <h3 class="panel-title">{{idescription}}</h3>
@@ -27,18 +29,34 @@
     		<p>{{icedi}}</p>
     	</div>
     	<div class="col-xs-3 col-md-3">
-    		<p>GH₵</p>
+    		<p>US$</p>
     	</div>
     	<div class="col-xs-3 col-md-3">
-    		<p>{{idollar}</p>
+    		<p>{{idollar}}</p>
     	</div>
         <p>Entered On: {{updatetime}}</p>
     </div>
   </div>
  </div>
-
-<p>This is the partial for Add Expense</p>
+ <div class="col-xs-12 col-md-12">
+    <table class="table table-striped table-responsive">
+        <tr>
+          <th>description</th>
+          <th>time</th>
+          <th>cedis</th>
+          <th>dollars</th>
+        </tr>
+        <tr ng-repeat="item in listofitems | orderBy:'description'">
+            <td>{{ item.description  }}</td>
+            <td>{{ item.recordtime | date : format: 'medium'}}</td>
+            <td>{{ item.cedi | number :2 }}</td>
+            <td>{{ item.usd | number :2 }}</td>
+        </tr>
+    </table>
+ </div>
+<div class="container-fluid"> 
 <p>
   Showing of 'interpolate' filter:
   {{ 'Current version is v%VERSION%.' | interpolate }}
 </p>
+</div>
