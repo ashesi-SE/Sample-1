@@ -19,16 +19,12 @@ angular.module('myApp.mainview', ['ngRoute','myApp.ForEx'])
                   $scope.forexupdating=true;
                   $scope.updatestate="btn-danger";
                   ForEx.getlatest(function(data){
-                      var waittime=2; //waittime in seconds
                       var updatdt; // date type of updated time
                        $scope.forexdata=data;
                        $scope.oldrate=$scope.cedidollarrate;
                        $scope.cedidollarrate=data.rates['GHS'];
                        updatdt=new Date();
                        $scope.updatetime="On "+updatdt.toLocaleDateString()+" At "+updatdt.toLocaleTimeString();
-                       $scope.updatestate="btn-success";
-                       // wait for a second to change the button color back to primary"
-                       while((new Date().valueOf())<=(updatdt.valueOf()+waittime*1000)) {}
                        $scope.updatestate="btn-primary";
                        $scope.forexupdating=false;
                     });

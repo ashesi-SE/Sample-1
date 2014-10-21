@@ -1,19 +1,20 @@
 <legend>Track Item Price</legend>
 <div class="container col-xs-12 col-md-10 col-lg-6">
 <div class="form-group">
-	<label class="control-label" for="idescription">Description</label>
-	<input class="form-control" id="idescription" type="text" ng-model="idescription" placeholder="Item Description" autofocus></input>
+	
 	<label class="control-label" for="icedi">Price</label>
-	<div class="input-group">
+	<div class="input-group col-xs-6 col-md-5 col-lg-3">
 		<span class="input-group-addon">GH₵</span>
-		<input type="text" ng-model="icedi" name="icedi" placeholder="Price" smart-float></input>
+		<input type="text" ng-model="icedi" ng-change="idollar=calcdoll(icedi)" name="icedi" placeholder="Price" smart-float autofocus></input>
 	</div>
-	<label class="control-label" for="idollars">Price</label>
-	<div class="input-group">
+	<label class="control-label" for="idollar">Price</label>
+	<div class="input-group col-xs-6 col-md-5 col-lg-3">
 		<span class="input-group-addon">US$</span>
-		<input type="text" ng-model="idollars" name="idollars" placeholder="Price" smart-float></input>
+		<input type="text" ng-model="idollar" ng-change="icedi=calccedi(idollar)" name="idollar" placeholder="Price" smart-float></input>
 	</div>
-	<button class="btn btn-lrge" ng-click="additem()">Add</button>
+	<label class="control-label" for="idescription">Description</label>
+  <input class="form-control" id="idescription" type="text" ng-model="idescription" placeholder="Item Description" ></input>
+  <button class="btn btn-lrge" ng-click="additem()">Add</button>
 </div>
 </div>
 <div class="container-fluid col-xs-12 col-md-10 col-lg-6"> 
@@ -26,19 +27,19 @@
     		<p>GH₵</p>
     	</div>
     	<div class="col-xs-3 col-md-3">
-    		<p>{{icedi}}</p>
+    		<p>{{icedi | number : 2}}</p>
     	</div>
     	<div class="col-xs-3 col-md-3">
     		<p>US$</p>
     	</div>
     	<div class="col-xs-3 col-md-3">
-    		<p>{{idollar}}</p>
+    		<p>{{idollar | number : 2}}</p>
     	</div>
         <p>Entered On: {{updatetime}}</p>
     </div>
   </div>
  </div>
- <div class="col-xs-12 col-md-12">
+ <div ng-show="listofitems.length>0" class="col-xs-12 col-md-12">
     <table class="table table-striped table-responsive">
         <tr>
           <th>description</th>
