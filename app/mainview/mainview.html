@@ -1,7 +1,6 @@
-<div class="col-xs-12 col-md-8">
-<div class="jumbotron">
+<div class="col-xs-12 col-md-8 col-lg-8">
   <div class="panel panel-heading">
-      <h2 class="panel-title em"><center>Cedi to Dollar Conversion</center></h2>
+      <p class="panel-title view-headline">Cedi to Dollar Conversion</p>
   </div>
   <div class="panel panel-body">
     <div class="row">
@@ -16,16 +15,42 @@
       <div class="col-xs-4 col-md-2">
       	<label>US$ {{dollarcedi() | number : 2 }} </label>
       </div>
-      <div class="col-xs-8 col-md-10">
+      <div class="col-xs-8 col-md-6">
     	 <label>US dollars to the Ghana Cedi</label>
       </div>
     </div>
+
   </div>
-  <center><button class="btn {{updatestate}} btn-lg btn-block" ng-click="updaterate()"><h2>Update Rate</h2></button></center>
+  <div class="col-xs-12 col-md-12">
+    <center><button class="btn {{updatestate}} btn-lg btn-block" ng-click="updaterate()"><h2>Update Rate</h2></button></center>
+  </div>
+<div class="col-xs-12 col-md-12" name="cedinotebox">
+  <div class="panel panel-info" >
+    <div class="panel panel-heading">
+      <h4 class="panel-title">Cedi Notes</h4>
+    </div>
+    <div class="panel panel-body">
+      <div class="col xs-6 col-md-6 lg-4" name="currency values"> 
+        <table class="table table-striped">
+          <tr>
+            <th>Denomination</th>
+            <th>Value in USD</th>
+          </tr>
+          <tr ng-repeat="value in [1,5,20,50] ">
+            <td>{{value}}</td>
+            <td>{{value*dollarcedi() | currency}}</td>
+          </tr>
+        </table>
+     </div>
+     <div class="col-xs-10 col md-10 col-lg-5" name="currency pic">
+        <img src="http://upload.wikimedia.org/wikipedia/en/7/7a/Ghana_Cedi_banknotes.jpg">
+        <a href="http://yawowusu.blogspot.co.uk/2010/03/ndc-kills-big-six-from-cedi-notes.html" class="version-footnote">Source: http://yawowusu.blogspot.co.uk</a>
+      </div>
+     
 </div>
 </div>
-<div class="col-xs-12 col-md-12"> 
-  <div class="panel panel-info">
+</div>
+  <div class="panel panel-info col-xs-12 col-md-8">
     <div class="panel panel-heading">
       <h3 class="panel-title">Old Rate Was {{oldrate | number :2 }}</h3>
     </div>
@@ -34,4 +59,3 @@
         <div ng-show="forexupdating"><label class=lbl-warning>Updating Rate</label></div>
     </div>
   </div>
-</div>

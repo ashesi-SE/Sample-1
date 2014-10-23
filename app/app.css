@@ -6,9 +6,25 @@ body {
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
-  padding: 0 0 0.5em;
+  padding: 0 0 0.5em; 
 }
 
+.view-headline {
+  font-weight:bold;
+  color:#3D7D41;
+  letter-spacing:1pt;
+  word-spacing:2pt;
+  font-size:20px;text-align:center;line-height:1;
+}
+.version-footnote {
+  {
+    font-weight:normal;
+    color:#FF8080;
+    letter-spacing:0pt;
+    word-spacing:0pt;
+    font-size:8px;text-align:left;
+    line-height:1;
+  }
 .menu:before {
   content: "[";
 }

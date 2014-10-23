@@ -32,8 +32,10 @@ angular.module('myApp.AddExp', ['ngRoute','myApp.ForEx'])
 				usd : dollarvalue,
 				cedi : cedivalue,
 				recordtime : new Date()
-			});
-		
+				});
+			$scope.idescription=null;
+			$scope.idollar=null;
+			$scope.icedi=null;
 		}
 	}
 }]);
