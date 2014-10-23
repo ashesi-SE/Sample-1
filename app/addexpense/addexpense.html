@@ -5,16 +5,22 @@
 	<label class="control-label" for="icedi">Price</label>
 	<div class="input-group col-xs-6 col-md-5 col-lg-3">
 		<span class="input-group-addon">GH₵</span>
-		<input type="text" ng-model="icedi" ng-change="idollar=calcdoll(icedi)" name="icedi" placeholder="Price" smart-float autofocus></input>
+		<input type="text" ng-model="icedi" ng-change="idollar=calcdoll(icedi)" name="icedi" placeholder="Cedi Price" smart-float autofocus></input>
+    <span class="input-group-addon"><span class="glyphicon glyphicon-remove-sign" ng-click="icedi=null"></span></span>
 	</div>
 	<label class="control-label" for="idollar">Price</label>
 	<div class="input-group col-xs-6 col-md-5 col-lg-3">
 		<span class="input-group-addon">US$</span>
-		<input type="text" ng-model="idollar" ng-change="icedi=calccedi(idollar)" name="idollar" placeholder="Price" smart-float></input>
+		<input type="text" ng-model="idollar" ng-change="icedi=calccedi(idollar)" name="idollar" placeholder="Dollar Price" smart-float></input>
+    <span class="input-group-addon"><span ng-click="idollar=null" class="glyphicon glyphicon-remove-sign"></span></span>
 	</div>
-	<label class="control-label" for="idescription">Description</label>
+  <label class="control-label" for="idescription">Description</label>
+	<div class="input-group col-xs-12 col-md-10 col-lg-6">
   <input class="form-control" id="idescription" type="text" ng-model="idescription" placeholder="Item Description" ></input>
+  <span class="input-group-addon"><span class="glyphicon glyphicon-remove-sign"ng-click="idescription=null"></span></span>
+  </div>
   <button class="btn btn-lrge" ng-click="additem()">Add</button>
+  <button class="btn btn-lrge" ng-click="additem()">Clear All</button>
 </div>
 </div>
 <div class="container-fluid col-xs-12 col-md-10 col-lg-6"> 

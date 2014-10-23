@@ -15,6 +15,11 @@ angular.module('myApp.AddExp', ['ngRoute','myApp.ForEx'])
 	$scope.calcdoll=function(cedi) {return(cedi*$scope.doll2cedi.rate);}
 	$scope.calccedi=function(dollar) {return(dollar*(1/$scope.doll2cedi.rate));}
 	if(ForEx.iserrorstatus($scope.doll2cedi)) $scope.doll2cedi={rate: (1/3.2), asof :0};
+	$scope.clearall=function(){
+			icedi=null;
+			idollar=null;
+			idescription=null;
+		};
 	$scope.additem=function(){
 		var cedivalue,dollarvalue;
 		
