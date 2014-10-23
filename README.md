@@ -1,17 +1,21 @@
-# currency-app - a simple currency converaion applicatin in angular
+# currency-app - a simple currency conversion application in angular
 
 ## Overview
-This project provides a simple currency coverter, initially focused on Cedi's to $.  Please see the wiking for more information
+This project provides a simple currency coverter, initially focused on Cedi's to $.  Please see the [wiki](https://github.com/ashesi-SE/Sample-1/wiki) for more information
 
 ## Basis
 
 The project is based on angularjs   angular-seed from github.  What is below is the angular seed readme info
 
 ## Stable Tree
-this is the readme for the stable tree
+this is the readme for the stable tree.  Stable is the latest completely working version.  Master has completed features.  Each major feature is developed in it's own branch
 
-## Week 3
-This is the week 3 readme
+## Organization
+The nodejs applciation is in server.js.  It mostly uses a static http-server module currently.
+
+Their is one curren view in stable, mainview in the app\mainview directory
+
+There is a seperate rest service that is being developed under [node] with the intention of merging it in.
 
 # angular seed readme info follows:
 
