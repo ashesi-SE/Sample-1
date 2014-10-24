@@ -4,7 +4,8 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.mainview',
-  'myApp.version'
+  'myApp.version',
+  'myApp.ForEx'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/mainview'});
